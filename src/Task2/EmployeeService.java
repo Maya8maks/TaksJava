@@ -11,25 +11,23 @@ public class EmployeeService {
     }
 
     void printEmployees() {
-        for(Employee employee : employees) {
+        for (Employee employee : employees) {
             System.out.println(employee);
         }
     }
 
     int calculateSalaryAndBonus() {
         int sum = 0;
-        for(Employee employee : employees) {
+        for (Employee employee : employees) {
             sum += employee.getFullSalary();
         }
-        System.out.println(sum);
         return sum;
     }
 
     Employee getById(long id) {
 
-        for(Employee employee : employees) {
+        for (Employee employee : employees) {
             if (employee.id == id) {
-                System.out.println(employee);
                 return employee;
             }
         }
@@ -39,17 +37,16 @@ public class EmployeeService {
     Employee[] getByName(String name) {
         Employee[] employeesArray = new Employee[employees.length];
         int index = 0;
-        for(Employee employee : employees) {
+        for (Employee employee : employees) {
             if (employee.name == name) {
                 employeesArray[index] = employee;
                 index++;
             }
         }
-        Employee[] employeesByName = new Employee[index+1];
+        Employee[] employeesByName = new Employee[index + 1];
         for (int i = 0; i <= index; i++) {
             employeesByName[i] = employeesArray[i];
         }
-        System.out.println(employeesByName);
         return employeesByName.length > 0 ? employeesByName : null;
     }
 
@@ -68,7 +65,7 @@ public class EmployeeService {
         Employee newEmployee;
         for (int i = 0; i < employees.length; i++) {
             for (int j = 0; j < employees.length; j++) {
-                if(employees[i].name.equals(employees[j].name) && employees[j].salary > employees[i].salary) {
+                if (employees[i].name.equals(employees[j].name) && employees[j].salary > employees[i].salary) {
                     newEmployee = employees[i];
                     employees[i] = employees[j];
                     employees[j] = newEmployee;
@@ -79,18 +76,17 @@ public class EmployeeService {
     }
 
     Employee edit(Employee employee) {
-       Employee searchEmployee = getById(employee.id);
-       Employee oldEmployee = null;
-       if (searchEmployee != null) {
-           for (int i = 0; i < employees.length; i++) {
-               if (employees[i].id == employee.id) {
-                   oldEmployee = employees[i];
-                   employees[i] = employee;
-                   break;
-               }
-           }
-       }
-        System.out.println(oldEmployee);
+        Employee searchEmployee = getById(employee.id);
+        Employee oldEmployee = null;
+        if (searchEmployee != null) {
+            for (int i = 0; i < employees.length; i++) {
+                if (employees[i].id == employee.id) {
+                    oldEmployee = employees[i];
+                    employees[i] = employee;
+                    break;
+                }
+            }
+        }
 
         return oldEmployee;
     }
@@ -103,9 +99,9 @@ public class EmployeeService {
                 break;
             }
         }
-        Employee[] newEmployeesArray = new Employee[employees.length -1];
+        Employee[] newEmployeesArray = new Employee[employees.length - 1];
         int counter = 0;
-        for( int i = 0; i< employees.length; i++) {
+        for (int i = 0; i < employees.length; i++) {
             if (i != index) {
                 newEmployeesArray[counter] = employees[i];
                 counter++;
@@ -113,7 +109,6 @@ public class EmployeeService {
         }
         Employee removeEmployee = employees[index];
         employees = newEmployeesArray;
-        System.out.println(removeEmployee);
         return removeEmployee;
     }
 
@@ -126,7 +121,7 @@ public class EmployeeService {
         newEmployeeArray[employees.length] = employee;
 
         employees = newEmployeeArray;
-        System.out.println(employees);
+
     }
 
 }

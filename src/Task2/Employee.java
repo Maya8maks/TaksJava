@@ -1,6 +1,6 @@
 package Task2;
 
-public class Employee implements Cloneable{
+public class Employee implements Cloneable {
     long id;
     String name;
     int age;
@@ -9,9 +9,12 @@ public class Employee implements Cloneable{
     int fixedBugs;
     int defaultBugRate;
 
-    public Employee(){};
+    public Employee() {
+    }
 
-    public Employee(long id,  int age, String name, String gender, int salary) {
+    ;
+
+    public Employee(long id, int age, String name, String gender, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -89,6 +92,7 @@ public class Employee implements Cloneable{
     public Employee clone() throws CloneNotSupportedException {
         return (Employee) super.clone();
     }
+
     int getFullSalary() {
         return salary;
     }
