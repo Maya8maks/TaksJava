@@ -1,3 +1,5 @@
+package Task1;
+
 public class Employee implements Cloneable{
     long id;
     String name;

@@ -1,3 +1,4 @@
+package Task2;
 
 public class Test {
 
@@ -20,6 +21,8 @@ public class Test {
         employeeService.edit(employeeFactory.getRandomEmployees(1)[0]);
 
         employeeService.remove(3L);
+        employeeService.add(employeeFactory.getRandomEmployees(1)[0]);
+
     }
 
 }

@@ -1,3 +1,4 @@
+package Task1;
 
 public class Test {
 
@@ -8,7 +9,7 @@ public class Test {
         employees = employeeFactory.getRandomEmployees(size);
 
         EmployeeService employeeService = new EmployeeService(employees);
-        employeeService.printEmployees();
+
         employeeService.calculateSalaryAndBonus();
         employeeService.getById(1L);
         employeeService.getByName("Jane");
