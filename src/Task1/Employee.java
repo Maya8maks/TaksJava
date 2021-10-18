@@ -1,6 +1,6 @@
 package Task1;
 
-public class Employee implements Cloneable{
+public class Employee implements Cloneable {
     long id;
     String name;
     int age;
@@ -9,7 +9,8 @@ public class Employee implements Cloneable{
     int fixedBugs;
     int defaultBugRate;
 
-    public Employee(){};
+    public Employee() {
+    }
 
     public Employee(long id, String name, int age, int salary, String gender) {
         this.id = id;
@@ -21,12 +22,12 @@ public class Employee implements Cloneable{
 
     public String toString() {
         String info = "id = " + id +
-            ",name = " + name +
-            ",age = " + age +
-            ",gender = " + gender +
-            ",salary = " + salary +
-            ",fixedBugs = " + fixedBugs +
-            ",defaultBugRate = " + defaultBugRate;
+                ",name = " + name +
+                ",age = " + age +
+                ",gender = " + gender +
+                ",salary = " + salary +
+                ",fixedBugs = " + fixedBugs +
+                ",defaultBugRate = " + defaultBugRate;
         return info;
     }
 
